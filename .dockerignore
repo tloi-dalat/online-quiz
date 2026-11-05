@@ -1,0 +1,13 @@
+.git
+.github
+.idea
+.vscode
+.venv
+**/__pycache__
+**/*.py[co]
+static
+media
+rootfiles
+*.sqlite3
+*.sql
+tloq/local_settings.py

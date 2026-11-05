@@ -1,0 +1,5 @@
+*                 @tloi-dalat/swe
+/.github/         @tloi-dalat/sre
+/Dockerfile       @tloi-dalat/sre
+/.dockerignore    @tloi-dalat/sre
+/.ci.settings.py  @tloi-dalat/sre

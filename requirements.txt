@@ -1,0 +1,9 @@
+Django>=6.1,<6.2
+django-cleanup
+django-redis
+django_jinja>=2.5.0
+jinja2
+psycopg[binary]>=3.2
+pytz
+gunicorn>=23
+whitenoise>=6.7
