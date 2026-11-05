@@ -1,0 +1,18 @@
+[flake8]
+max-line-length = 120
+application-import-names = tloq,quiz
+import-order-style = pycharm
+enable-extensions = G
+ignore =
+    W504,
+    C814,
+per-file-ignores =
+    ./*/__init__.py:F401,F403
+    ./quiz/migrations/*.py:E501
+exclude =
+    ./tloq/local_settings.py,
+    ./tloq/local_urls.py,
+    ./.ci.settings.py,
+    ./.k8s.settings.py,
+    ./tloq/local_settings.example.py,
+    .venv,

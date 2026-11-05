@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ SITE_LONG_NAME }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ static('style.css') }}">
+    {% block media %}{% endblock %}
+</head>
+<body>
+<header>
+    <a href="{{ url('home') }}">{{ SITE_NAME }}</a>
+    <nav>
+        {% if request.user.is_authenticated %}
+            <span>{{ request.user.username }}</span>
+            <form action="{{ url('logout') }}" method="post">
+                {% csrf_token %}
+                <button type="submit">{{ _('Log out') }}</button>
+            </form>
+        {% else %}
+            <a href="{{ url('login') }}">{{ _('Log in') }}</a>
+        {% endif %}
+    </nav>
+</header>
+<main>
+    {% block body %}{% endblock %}
+</main>
+</body>
+</html>
