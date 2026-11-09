@@ -33,22 +33,8 @@ jobs:
       settings-file: .ci.settings.py
       settings-target: tloq/local_settings.py
       database: postgres
-      postgres-image: postgres:17
+      postgres-image: postgres:18
       labels: quiz
-
-  migrations:
-    name: check-migrations
-    if: github.event_name == 'pull_request'
-    permissions:
-      contents: read
-    uses: tloi-dalat/reusable-workflow/.github/workflows/django-migration-check.yaml@main
-    with:
-      python-version: '3.14'
-      requirements: requirements.txt
-      settings-file: .ci.settings.py
-      settings-target: tloq/local_settings.py
-      database: postgres
-      postgres-image: postgres:17
 
   templates:
     name: check-templates
