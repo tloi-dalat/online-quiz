@@ -16,3 +16,14 @@ DATABASES = {
         'PORT': 15432,
     },
 }
+
+
+class _NoMigrations(dict):
+    def __contains__(self, item):
+        return True
+
+    def __getitem__(self, item):
+        return None
+
+
+MIGRATION_MODULES = _NoMigrations()
